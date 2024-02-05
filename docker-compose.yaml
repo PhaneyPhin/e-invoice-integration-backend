@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  sv-onboarding-merchant:
+    container_name: app
+    image: app:latest
+    restart: always
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    env_file:
+      - .env
+
+    ports:
+      - "${PORT}:${PORT}"
